@@ -27,6 +27,7 @@ public class Klasse {
         } else {
             Student[] help = new Student[students.length + 1];
 
+
         }
         getStudents()[getStudents().length - 1] = student;
     }
