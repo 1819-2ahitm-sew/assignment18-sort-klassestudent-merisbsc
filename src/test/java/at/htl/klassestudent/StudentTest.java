@@ -1,19 +1,14 @@
 package at.htl.klassestudent;
 
-import org.hamcrest.CoreMatchers;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.greaterThan;
+import static org.hamcrest.Matchers.lessThan;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class KlasseStudentTest {
-
-    @BeforeAll
-    static void setup() {
-
-    }
-
+class StudentTest {
 
     @Test
     public void student_compareTwoStudents_true() {
@@ -32,7 +27,7 @@ public class KlasseStudentTest {
 
         int compare = maxi.compareTo(maxi2);
 
-        assertThat(compare, CoreMatchers.is(0));
+        assertThat(compare, is(0));
     }
 
     @Test
@@ -44,13 +39,4 @@ public class KlasseStudentTest {
 
         assertThat(compare, greaterThan(0));
     }
-
-    @Test
-    public void klasse_insertAStudent_true() {
-        Student magda = new Student("Magda", "Lena", 2);
-        Klasse klasse = new Klasse("2ahitm");
-
-        assertThat(klasse.getStudents(), hasItemInArray(magda));
-    }
-
 }
